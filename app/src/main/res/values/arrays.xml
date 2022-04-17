@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="note_style_array">
+        <item>Linear</item>
+        <item>Grid</item>
+    </string-array>
+    <string-array name="note_style_values">
+        <item>Linear</item>
+        <item>Grid</item>
+    </string-array>
+
+    <string-array name="time_format_array">
+        <item>hh:mm:ss - yyyy/MM/dd</item>
+        <item>hh:mm:ss - dd/MM/yyyy</item>
+    </string-array>
+    <string-array name="time_format_values">
+        <item>hh:mm:ss - yyyy/MM/dd</item>
+        <item>hh:mm:ss - dd/MM/yyyy</item>
+    </string-array>
+
+    <string-array name="chose_theme_array">
+        <item>Classic theme</item>
+        <item>Light theme</item>
+        <item>Night theme</item>
+    </string-array>
+    <string-array name="chose_theme_value">
+        <item>classic</item>
+        <item>light</item>
+        <item>night</item>
+    </string-array>
+
+    <string-array name="text_size_array">
+        <item>12sp</item>
+        <item>14sp</item>
+        <item>16sp</item>
+        <item>18sp</item>
+        <item>20sp</item>
+    </string-array>
+    <string-array name="text_size_value">
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="language_array">
+        <item>English</item>
+        <item>Russia</item>
+        <item>Ukraine</item>
+    </string-array>
+    <string-array name="language_value">
+        <item>en</item>
+        <item>ru</item>
+        <item>ua</item>
+    </string-array>
+
+</resources>

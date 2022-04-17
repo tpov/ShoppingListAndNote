@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#00672B</color>
+
+    <color name="picker_black">#000000</color>
+    <color name="picker_green">#00B54B</color>
+    <color name="picker_red">#D50000</color>
+    <color name="picker_yellow">#FFD600</color>
+    <color name="picker_orange">#FF6D00</color>
+    <color name="picker_cyan">#00159C</color>
+    <color name="colorP">#800000</color>
+    <color name="light_grey">#9F9F9F</color>
+
+
+    <color name="purple_200_night">#3C2D4E</color>
+    <color name="purple_500_night">#2B0068</color>
+    <color name="purple_700_night">#FF3700B3</color>
+    <color name="teal_200_night">#00574E</color>
+    <color name="teal_700_night">#000C4C</color>
+    <color name="black_night">#001E8A</color>
+    <color name="white_night">#787878</color>
+    <color name="green_night">#003918</color>
+
+    <color name="picker_black_night">#001478</color>
+    <color name="picker_green_night">#004A1F</color>
+    <color name="picker_red_night">#4A0000</color>
+    <color name="picker_yellow_night">#493D00</color>
+    <color name="picker_orange_night">#532400</color>
+    <color name="picker_cyan_night">#000000</color>
+    <color name="colorP_night">#400000</color>
+    <color name="light_grey_night">#555555</color>
+
+
+    <color name="purple_200_light">#D7B7FF</color>
+    <color name="purple_500_light">#9153EA</color>
+    <color name="purple_700_light">#6D50AF</color>
+    <color name="teal_200_light">#54D8CB</color>
+    <color name="teal_700_light">#358786</color>
+    <color name="black_night_light">#595959</color>
+    <color name="white_night_light">#FFFFFFFF</color>
+    <color name="green_night_light">#47AE72</color>
+
+    <color name="picker_black_light">#787878</color>
+    <color name="picker_green_light">#62B383</color>
+    <color name="picker_red_light">#CF7373</color>
+    <color name="picker_yellow_light">#FFEB80</color>
+    <color name="picker_orange_light">#FFBA86</color>
+    <color name="picker_cyan_light">#505CAA</color>
+    <color name="colorP_light">#6A3A3A</color>
+    <color name="light_grey_light">#9F9F9F</color>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable/bg_edit_dialog.xml" value="0.271875" />
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable/ic_color.xml" value="0.271875" />
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable/ic_launcher_shop_list.xml" value="0.1" />
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable/ic_setting.xml" value="0.2676923076923077" />
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable/ic_shop_list.xml" value="0.271875" />
+        <entry key="..\:/ShoppingList/app/src/main/res/drawable/ic_theme_style.xml" value="0.19739583333333333" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.15272726941699832" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/activity_new_note.xml" value="0.21818181345285476" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/activity_settings.xml" value="0.14945652173913043" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/activity_shop_list.xml" value="0.21818181345285476" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/delete_dialog.xml" value="0.1" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/edit_action_layout.xml" value="0.14468085106382977" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/edit_list_item_dialog.xml" value="0.2937181663837012" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/fragment_note.xml" value="0.1" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/fragment_shop_list_names.xml" value="0.22909090412549746" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/list_name_item.xml" value="0.34549356223175964" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/new_list_dialog.xml" value="0.18545454143492654" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/note_list_item.xml" value="0.35999999219721035" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/plice_holder.xml" value="0.13125" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/shop_library_name.xml" value="0.2727272668160684" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/shop_list_menu.xml" value="0.1" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/shop_list_name.xml" value="0.2727272668160684" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/switch_item.xml" value="0.13125" />
+        <entry key="..\:/ShoppingList/app/src/main/res/menu/button_menu.xml" value="0.2557291666666667" />
+        <entry key="..\:/ShoppingList/app/src/main/res/menu/new_note_menu.xml" value="0.2727272668160684" />
+        <entry key="..\:/ShoppingList/app/src/main/res/menu/shop_list_menu.xml" value="0.2727272668160684" />
+        <entry key="..\:/ShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13090908807171284" />
+        <entry key="..\:/ShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/ShoppingList/app/src/main/res/xml/settings_preference.xml" value="0.21818181345285476" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

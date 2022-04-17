@@ -1,0 +1,81 @@
+<resources>
+
+    <string name="question_australia">Canberra is the capital of Australia. / Канберра - столица Австралии.</string>
+    <string name="question_oceans">The Pacific Ocean is larger than the Atlantic Ocean. / Тихий океан больше Атлантического океана.</string>
+    <string name="question_mideast">The Suez Canal connects the Red Sea and the Indian Ocean. / Суэцкий канал соединяет Красное море и Индийский океан.</string>
+    <string name="question_africa">The source of the Nile River is in Egypt. / Исток реки Нил находится в Египте.</string>
+    <string name="question_americas">The Amazon River is the longest river in the Americas. / Река Амазонка - самая длинная река в Америке.</string>
+    <string name="question_asia">Lake Baikal is the world`s oldest and deepest freshwater lake. / Озеро Байкал - старейшее и самое глубокое пресноводное озеро в мире.</string>
+
+    <string name="question_riverInRussia">The longest river in Russia is Lena. / Самая длинная река в России — Лена.</string>
+    <string name="question_headquarters">The UN headquarters is located in New York. / Штаб-квартира ООН находится в Нью-Йорке.</string>
+    <string name="question_Gabon">Gaborone - the capital of Gabon / Габороне — столица Габона.</string>
+    <string name="question_Sicily"> Sicily is washed by the Mediterranean Sea. / Сицилию омывает Средиземное море.</string>
+    <string name="question_Ireland">The capital of Ireland is Dublin. / Столица Ирландии — Дублин.</string>
+    <string name="question_Paris">Previously, Paris was called Lutetia. / Раньше Париж носил название Лютеция.</string>
+    <string name="question_Atlas">Atlas is a mountain range located in Europe. / Атлас – это цепь горных хребтов, расположенная в Европе.</string>
+    <string name="question_China"> In China, despite its impressive size, there is only one time zone. / В Китае, несмотря на его внушительные размеры, всего один часовой пояс. true</string>
+    <string name="question_Mayan">The Mayan pyramids of the city of Chichen Itza are located in Peru. / Пирамиды майя города Чичен-Ица находятся в Перу.</string>
+    <string name="question_Reykjavik">Reykjavik is the capital of Iceland. / Рейкьявик — столица Исландии.</string>
+    <string name="question_Oymyakon">The coldest point in the world, where people constantly live, is the Russian village of Oymyakon. / Самая холодная точка мира, где постоянно проживают люди, — российское село Оймякон.</string>
+
+    <string name="app_name">ShoppingList</string>
+    <string name="inter_ad_id">ca-app-pub-6279944059986833/5924755266</string>
+    <string name="setting">Настройки</string>
+    <string name="notes">Заметки</string>
+    <string name="shop_list">Список покупок</string>
+    <string name="newItem">Новый элемент</string>
+    <string name="tvTitle">Название</string>
+    <string name="tvDescription">Информация</string>
+    <string name="title_hint">название</string>
+    <string name="description_hint">информация</string>
+    <string name="tvTime">Время</string>
+
+    <string name="new_list">Новое название списка</string>
+    <string name="list_name">Название списка</string>
+    <string name="but_create_list">Создать список</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="shop_list_fragment">Фрагмент списка покупок</string>
+    <string name="delete_dialog_item">Удалить</string>
+    <string name="delete_dialog_alert">Вы действительно хотите удалить этот элемент?</string>
+    <string name="b_update">ОБНОВИТЬ</string>
+    <string name="b_create">СОЗДАТЬ</string>
+    <string name="tv_create_list">СОЗДАТЬ СПИСОК</string>
+    <string name="tv_update_list">РЕДАКТИРОВАТЬ СПИСОК</string>
+    <string name="shop_list_delete_list">Удалить список</string>
+    <string name="shop_list_menu_share_list">Поделиться списком</string>
+    <string name="shop_list_menu_clear_list">Очистить список</string>
+    <string name="shop_list_menu_new_item">Новый элемент</string>
+    <string name="shop_list_menu_save_item">Сохранить элемент</string>
+    <string name="edit_action_layout_edNewShopItem">Новый элемент</string>
+    <string name="shop_list_name_tvName">Имя</string>
+    <string name="shop_list_name_tvInfo">Инфо</string>
+    <string name="shop_library_item_tvName">Имя</string>
+    <string name="edEmptyText">Пусто</string>
+    <string name="tvUpdateListText">Изменить список</string>
+    <string name="etName">Имя</string>
+    <string name="edit_list_item_dialog_etName">Имя</string>
+    <string name="et_item_info">Информация элемента</string>
+    <string name="b_update_item">ОБНОВИТЬ ЭЛЕМЕНТ</string>
+    <string name="word_info">0/0</string>
+
+    <string name="general">Главное</string>
+    <string name="chose_time_format">Формат времени</string>
+    <string name="remove_ads">Убрать рекламу</string>
+    <string name="remove_summary">Укажите суму на которую заслуживает это приложение на ваше мнение :)</string>
+    <string name="theme_settings">Настройки темы</string>
+    <string name="chose_theme">Изменить тему</string>
+    <string name="note_text_settings">Настройки текста заметок</string>
+    <string name="title_text_size">Размер титульного текста</string>
+    <string name="content_text_size">Размер текста контента</string>
+    <string name="chose_note_style">Стиль заметок</string>
+    <string name="note_style_key">note_style_key</string>
+    <string name="time_format_key">time_format_key</string>
+    <string name="theme_key">theme_key</string>
+    <string name="title_size_key">title_size_key</string>
+    <string name="content_size_key">content_size_key</string>
+    <string name="remove_ads_key">remove_ads_key</string>
+    <string name="massage_show_ads">С помощю просмотра рекламы данное приложение поддерживается :)</string>
+    <string name="language_app">Язык</string>
+</resources>
