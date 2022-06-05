@@ -1,24 +1,5 @@
 <resources>
 
-    <string name="question_australia">Canberra is the capital of Australia. / Канберра - столица Австралии.</string>
-    <string name="question_oceans">The Pacific Ocean is larger than the Atlantic Ocean. / Тихий океан больше Атлантического океана.</string>
-    <string name="question_mideast">The Suez Canal connects the Red Sea and the Indian Ocean. / Суэцкий канал соединяет Красное море и Индийский океан.</string>
-    <string name="question_africa">The source of the Nile River is in Egypt. / Исток реки Нил находится в Египте.</string>
-    <string name="question_americas">The Amazon River is the longest river in the Americas. / Река Амазонка - самая длинная река в Америке.</string>
-    <string name="question_asia">Lake Baikal is the world`s oldest and deepest freshwater lake. / Озеро Байкал - старейшее и самое глубокое пресноводное озеро в мире.</string>
-
-    <string name="question_riverInRussia">The longest river in Russia is Lena. / Самая длинная река в России — Лена.</string>
-    <string name="question_headquarters">The UN headquarters is located in New York. / Штаб-квартира ООН находится в Нью-Йорке.</string>
-    <string name="question_Gabon">Gaborone - the capital of Gabon / Габороне — столица Габона.</string>
-    <string name="question_Sicily"> Sicily is washed by the Mediterranean Sea. / Сицилию омывает Средиземное море.</string>
-    <string name="question_Ireland">The capital of Ireland is Dublin. / Столица Ирландии — Дублин.</string>
-    <string name="question_Paris">Previously, Paris was called Lutetia. / Раньше Париж носил название Лютеция.</string>
-    <string name="question_Atlas">Atlas is a mountain range located in Europe. / Атлас – это цепь горных хребтов, расположенная в Европе.</string>
-    <string name="question_China"> In China, despite its impressive size, there is only one time zone. / В Китае, несмотря на его внушительные размеры, всего один часовой пояс. true</string>
-    <string name="question_Mayan">The Mayan pyramids of the city of Chichen Itza are located in Peru. / Пирамиды майя города Чичен-Ица находятся в Перу.</string>
-    <string name="question_Reykjavik">Reykjavik is the capital of Iceland. / Рейкьявик — столица Исландии.</string>
-    <string name="question_Oymyakon">The coldest point in the world, where people constantly live, is the Russian village of Oymyakon. / Самая холодная точка мира, где постоянно проживают люди, — российское село Оймякон.</string>
-
     <string name="app_name">ShoppingList</string>
     <string name="inter_ad_id">ca-app-pub-6279944059986833/5924755266</string>
     <string name="setting">Настройки</string>
@@ -28,7 +9,7 @@
     <string name="tvTitle">Название</string>
     <string name="tvDescription">Информация</string>
     <string name="title_hint">название</string>
-    <string name="description_hint">информация</string>
+    <string name="description_hint">Информация</string>
     <string name="tvTime">Время</string>
 
     <string name="new_list">Новое название списка</string>
@@ -76,6 +57,6 @@
     <string name="title_size_key">title_size_key</string>
     <string name="content_size_key">content_size_key</string>
     <string name="remove_ads_key">remove_ads_key</string>
-    <string name="massage_show_ads">С помощю просмотра рекламы данное приложение поддерживается :)</string>
+    <string name="massage_show_ads">С помощью просмотра рекламы данное приложение поддерживается :)</string>
     <string name="language_app">Язык</string>
 </resources>

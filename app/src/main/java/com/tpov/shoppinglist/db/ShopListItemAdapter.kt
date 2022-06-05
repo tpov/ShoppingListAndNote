@@ -3,6 +3,7 @@ package com.tpov.shoppinglist.db
 import android.graphics.Paint
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -132,6 +133,7 @@ class ShopListItemAdapter(private val listener: Listener) :
 
     interface Listener {
         fun editItem(note: ShopingListItem, state: Int)
+        fun onCreateOptionsMenu(menu: Menu?): Boolean
     }
 
     companion object {
