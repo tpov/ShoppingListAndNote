@@ -5,13 +5,16 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.tpov.shoppinglist.api.ApiFactory
 import com.tpov.shoppinglist.billing.BillingManager
 import com.tpov.shoppinglist.databinding.ActivityMainBinding
 import com.tpov.shoppinglist.databinding.NewListDialogBinding
+import com.tpov.shoppinglist.db.MainViewModel
 import com.tpov.shoppinglist.dialog.NewListDialog
 import com.tpov.shoppinglist.fragments.FragmentManager
 import com.tpov.shoppinglist.fragments.NoteFragment
@@ -20,11 +23,14 @@ import com.tpov.shoppinglist.fragments.ShopListNamesFragment
 import com.tpov.shoppinglist.settings.SettingsActivity
 import com.tpov.shoppinglist.settings.SettingsFragment
 import kotlinx.coroutines.InternalCoroutinesApi
+import kotlin.concurrent.thread
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback as InterstitialAdLoadCallback
 
 @InternalCoroutinesApi
 class MainActivity : AppCompatActivity(), NewListDialog.Listener {
-
+    private val mainViewModel: MainViewModel by viewModels {
+        MainViewModel.MainViewModelFactory((applicationContext as MainApp).database)
+    }
     lateinit var binding: ActivityMainBinding
     lateinit var defPref: SharedPreferences
     private var currentMenuItemId = R.id.shop_list
@@ -32,6 +38,8 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
     private var iAd: InterstitialAd? = null
     private var currentShowAd = 0
     private lateinit var pref: SharedPreferences
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         MobileAds.initialize(this)
@@ -50,6 +58,9 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
         if (!pref.getBoolean(BillingManager.REMOVE_ADS_KEY, false)) {
             loadInterAd()
         }
+
+        mainViewModel.getRecipe()
+
     }
 
     private fun showInterAd(adListener :AdListener) {

@@ -43,6 +43,7 @@ class ShopListActivity : AppCompatActivity(), ShopListItemAdapter.Listener {
         init()
         initRcview()
         listItemObserver()
+
     }
 
     private fun libraryItemObserver() {

@@ -1,15 +1,12 @@
 package com.tpov.shoppinglist
 
-import Question
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Typeface
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
-import android.text.method.TextKeyListener.clear
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.util.Log
@@ -20,13 +17,10 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
-import androidx.core.text.getSpans
 import androidx.preference.PreferenceManager
 import com.tpov.shoppinglist.databinding.ActivityNewNoteBinding
-import com.tpov.shoppinglist.db.CrimeNewQuiz
 import com.tpov.shoppinglist.db.MainViewModel
 import com.tpov.shoppinglist.entities.NoteItem
 import com.tpov.shoppinglist.fragments.NoteFragment
@@ -34,7 +28,6 @@ import com.tpov.shoppinglist.utils.HtmlManager
 import com.tpov.shoppinglist.utils.MyTouchListener
 import com.tpov.shoppinglist.utils.TimeManager
 import kotlinx.coroutines.InternalCoroutinesApi
-import java.text.SimpleDateFormat
 import java.util.*
 
 @InternalCoroutinesApi
@@ -43,9 +36,7 @@ class NewNoteActivity : AppCompatActivity() {
     private var note: NoteItem? = null
     private var pref: SharedPreferences? = null
 
-    private val mainViewModel: MainViewModel by viewModels {
-        MainViewModel.MainViewModelFactory((applicationContext as MainApp).database)
-    }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -232,6 +223,7 @@ class NewNoteActivity : AppCompatActivity() {
             }
 
             override fun onAnimationRepeat(p0: Animation?) {
+
             }
         })
         binding.colorPicker.startAnimation(openAnim)

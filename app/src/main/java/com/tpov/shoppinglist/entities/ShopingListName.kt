@@ -23,6 +23,5 @@ data class ShopingListName (
     val checkenItemsCounter: Int,
 
     @ColumnInfo (name = "itemsIds")
-    val itemsIds: String,
-
-        ): Serializable
+    val itemsIds: String
+): Serializable

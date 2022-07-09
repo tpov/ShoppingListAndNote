@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tpov.shoppinglist">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".MainApp"
@@ -13,6 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_shop_list"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoppingList">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".settings.SettingsActivity"
             android:exported="false" />
@@ -25,15 +29,17 @@
             android:theme="@style/Theme.NewNote"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ShplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6279944059986833~8606758920"/>
+            android:value="ca-app-pub-6279944059986833~8606758920" />
     </application>
 </manifest>

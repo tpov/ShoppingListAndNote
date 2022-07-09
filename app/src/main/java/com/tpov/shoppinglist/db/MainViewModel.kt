@@ -3,7 +3,6 @@ package com.tpov.shoppinglist.db
 import android.util.Log
 import androidx.lifecycle.*
 import com.tpov.shoppinglist.api.ApiFactory
-import com.tpov.shoppinglist.api.ShopApi
 import com.tpov.shoppinglist.entities.LibraryItem
 import com.tpov.shoppinglist.entities.NoteItem
 import com.tpov.shoppinglist.entities.ShopingListItem
@@ -20,28 +19,18 @@ class MainViewModel(database: MainDatabase) : ViewModel() {
     val allShopingListName: LiveData<List<ShopingListName>> = dao.getAllShopListNames().asLiveData()
     val libraryItem = MutableLiveData<List<LibraryItem>>()
     private val compositeDisposable = CompositeDisposable()
+    private val apiService = ApiFactory.apiService
 
-    init {
-        loadApi()
+    fun getRecipe() = viewModelScope.launch  {
+        val apiList = apiService.getFullPriceList().recipes[0]
+        Log.d("WorkManager", "Загружен вопрос: ${apiList}}")
+
     }
-   private fun loadApi() {
-       val client = OkHttpClient()
-
-       val request = Request.Builder()
-           .url("https://themealdb.p.rapidapi.com/random.php")
-           .get()
-           .addHeader("X-RapidAPI-Host", "themealdb.p.rapidapi.com")
-           .addHeader("X-RapidAPI-Key", "9c69b0732fmsh93420bb3a88366bp19aef1jsnd05e64624092")
-           .build()
-
-       val response = client.newCall(request).execute()
-
-       Log.d("ViewModel", "response $response")
-   }
 
     fun getAllItemsFromList(listId: Int) : LiveData<List<ShopingListItem>> {
         return dao.getAllShopListItem(listId).asLiveData()
     }
+
     fun getAllLibraryItem(name: String) = viewModelScope.launch {
         libraryItem.postValue(dao.getAllLibraryItems(name))
     }
