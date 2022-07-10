@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_recipe_name_recipe">Name recipe</string>
+    <string name="recipe_tv_check">"sustainable "</string>
+    <string name="recipe_add_product">Добавить продукты</string>
+</resources>

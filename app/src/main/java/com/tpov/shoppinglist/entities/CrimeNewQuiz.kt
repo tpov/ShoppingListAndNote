@@ -20,5 +20,4 @@ data class CrimeNewQuiz(
 
     @ColumnInfo(name = "idListNameQuestion")
     val idListNameQuestion: String,
-
-    )
+)

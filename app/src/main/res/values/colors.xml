@@ -55,4 +55,5 @@
     <color name="picker_cyan_light">#505CAA</color>
     <color name="colorP_light">#6A3A3A</color>
     <color name="light_grey_light">#9F9F9F</color>
+    <color name="recipe_color_background">#769568</color>
 </resources>

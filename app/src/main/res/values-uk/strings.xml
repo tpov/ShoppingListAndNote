@@ -59,4 +59,7 @@
     <string name="remove_ads_key">remove_ads_key</string>
     <string name="massage_show_ads">За допомогою перегляду реклами данний додаток підтримується :)</string>
     <string name="language_app">Мова</string>
+    <string name="tv_recipe_name_recipe">Name recipe</string>
+    <string name="recipe_tv_check">"sustainable "</string>
+    <string name="recipe_add_product">Добавить продукты</string>
 </resources>
