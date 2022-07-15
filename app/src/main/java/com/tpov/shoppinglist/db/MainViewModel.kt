@@ -2,30 +2,24 @@ package com.tpov.shoppinglist.db
 
 import android.util.Log
 import androidx.lifecycle.*
+import com.tpov.shoppinglist.ConvertorApiDB
 import com.tpov.shoppinglist.api.ApiFactory
 import com.tpov.shoppinglist.entities.LibraryItem
 import com.tpov.shoppinglist.entities.NoteItem
 import com.tpov.shoppinglist.entities.ShopingListItem
 import com.tpov.shoppinglist.entities.ShopingListName
-import io.reactivex.Single
+import com.tpov.shoppinglist.pojo.Responce
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.launch
-import okhttp3.OkHttpClient
-import okhttp3.Request
 
 class MainViewModel(database: MainDatabase) : ViewModel() {
     private val dao = database.getDao()
+
     val allNotes: LiveData<List<NoteItem>> = dao.getAllNotes().asLiveData()
     val allShopingListName: LiveData<List<ShopingListName>> = dao.getAllShopListNames().asLiveData()
     val libraryItem = MutableLiveData<List<LibraryItem>>()
     private val compositeDisposable = CompositeDisposable()
-    private val apiService = ApiFactory.apiService
 
-    fun getRecipe() = viewModelScope.launch  {
-        val apiList = apiService.getFullPriceList().recipes[0]
-        Log.d("WorkManager", "Загружен вопрос: ${apiList}}")
-
-    }
 
     fun getAllItemsFromList(listId: Int) : LiveData<List<ShopingListItem>> {
         return dao.getAllShopListItem(listId).asLiveData()

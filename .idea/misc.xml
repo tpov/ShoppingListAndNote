@@ -22,6 +22,7 @@
         <entry key="..\:/ShoppingList/app/src/main/res/layout/fragment_note.xml" value="0.1" />
         <entry key="..\:/ShoppingList/app/src/main/res/layout/fragment_shop_list_names.xml" value="0.22909090412549746" />
         <entry key="..\:/ShoppingList/app/src/main/res/layout/list_name_item.xml" value="0.34549356223175964" />
+        <entry key="..\:/ShoppingList/app/src/main/res/layout/main_fragment.xml" value="0.12234042553191489" />
         <entry key="..\:/ShoppingList/app/src/main/res/layout/new_list_dialog.xml" value="0.18545454143492654" />
         <entry key="..\:/ShoppingList/app/src/main/res/layout/note_list_item.xml" value="0.35999999219721035" />
         <entry key="..\:/ShoppingList/app/src/main/res/layout/plice_holder.xml" value="0.13125" />
@@ -38,6 +39,11 @@
         <entry key="..\:/ShoppingList/app/src/main/res/xml/settings_preference.xml" value="0.21818181345285476" />
       </map>
     </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="androidx.room.TypeConverter" />
+    </list>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

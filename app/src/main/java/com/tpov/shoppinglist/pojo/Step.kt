@@ -1,18 +1,13 @@
 package com.tpov.shoppinglist.pojo
 
+import androidx.room.Embedded
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class Step(
-    private val equipment: List<Equipment>,
-    @SerializedName("ingredients")
-    @Expose
-    private val ingredients: List<Ingredient>,
-    private val length: Length,
-    private val number: Int,
-    private val step: String
-) {
-    fun getEquipment(): List<Equipment> {
-        return equipment
-    }
-}
+   val equipment: List<Equipment>?,
+   val ingredients: List<Ingredient>?,
+   val length: Length?,
+   val number: Int?,
+   val step: String?
+)

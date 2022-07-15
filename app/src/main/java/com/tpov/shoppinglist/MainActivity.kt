@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
             loadInterAd()
         }
 
-        mainViewModel.getRecipe()
 
     }
 
@@ -149,6 +148,9 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
                         currentShowAd++
                     }
                     Log.d("MainActivity_bNav", "NewItem")
+                }
+                R.id.network -> {
+                    startActivity(Intent(this@MainActivity, RecipeActivity::class.java))
                 }
             }
             true

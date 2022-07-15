@@ -22,4 +22,9 @@
         android:title="@string/newItem"
         android:icon="@drawable/ic_new_item"
         app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/network"
+        android:title="@string/newItem"
+        android:icon="@drawable/ic_language"
+        app:showAsAction="ifRoom" />
 </menu>
