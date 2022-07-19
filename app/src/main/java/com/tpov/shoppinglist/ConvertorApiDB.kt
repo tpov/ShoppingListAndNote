@@ -7,6 +7,7 @@ import com.tpov.shoppinglist.pojo.Responce
 class ConvertorApiDB {
 
     fun apiToTable(responce: Responce): ArrayList<Any?> {
+        Log.d("RecipeActivity", "Converter.")
 
         var arrayListRecipe = arrayListOf<Any?>()
         var i = 0
@@ -15,7 +16,8 @@ class ConvertorApiDB {
         var q = 0
 
         responce.recipes.forEach { resipe ->
-            Log.d("RecipeActivity", "recipeApi forEach, it = $resipe")
+            Log.d("Converter", "recipes")
+
             arrayListRecipe.add(
                 TableRecipe(
                     resipe.id,
@@ -23,9 +25,12 @@ class ConvertorApiDB {
                     ""
                 )
             )
+
+            Log.d("Converter", "TableRecipe")
             arrayListRecipe.add(
 
                 EntityRecipe(
+                    null,
                     id = resipe.id,
                     aggregateLikes = resipe.aggregateLikes,
                     cheap = resipe.cheap,
@@ -60,14 +65,25 @@ class ConvertorApiDB {
                 )
             )
             i = 0
+            Log.d("Converter", "analyzedInstructions")
+
             resipe.analyzedInstructions?.forEach {
+                Log.d("Converter", "EntityRecipe.")
+
                 i++
-                arrayListRecipe.add(EntityRecipeAnalyzedInstruction(resipe.id, i, it.name))
+                arrayListRecipe.add(
+                    EntityRecipeAnalyzedInstruction(
+                        null, resipe.id, i, it.name
+                    )
+                )
                 j = 0
+                Log.d("Converter", "analyzedInstructions")
+
                 it.steps?.forEach { itSteps ->
                     j++
                     arrayListRecipe.add(
                         EntityRecipeStep(
+                            null,
                             j,
                             resipe.id!!,
                             i,
@@ -80,6 +96,7 @@ class ConvertorApiDB {
                         k++
                         arrayListRecipe.add(
                             EntityRecipeEquipment(
+                                null,
                                 resipe.id,
                                 i,
                                 j,
@@ -95,6 +112,7 @@ class ConvertorApiDB {
                         k++
                         arrayListRecipe.add(
                             EntityRecipeIngredient(
+                                null,
                                 k,
                                 i,
                                 j,
@@ -107,6 +125,7 @@ class ConvertorApiDB {
                     }
                     arrayListRecipe.add(
                         EntityRecipeLength(
+                            null,
                             resipe.id,
                             i,
                             j,
@@ -121,6 +140,7 @@ class ConvertorApiDB {
                 i++
                 arrayListRecipe.add(
                     EntityRecipeCuisines(
+                        null,
                         resipe.id,
                         i,
                         it
@@ -132,6 +152,7 @@ class ConvertorApiDB {
                 i++
                 arrayListRecipe.add(
                     EntityRecipeDiets(
+                        null,
                         resipe.id,
                         i,
                         it
@@ -143,6 +164,7 @@ class ConvertorApiDB {
                 i++
                 arrayListRecipe.add(
                     EntityRecipeDishTypes(
+                        null,
                         resipe.id,
                         i,
                         it
@@ -154,6 +176,7 @@ class ConvertorApiDB {
                 i++
                 arrayListRecipe.add(
                     EntityRecipeExtendedIngredient(
+                        null,
                         resipe.id,
                         i,
                         it.aisle,
@@ -169,6 +192,7 @@ class ConvertorApiDB {
                 )
                 arrayListRecipe.add(
                     EntityRecipeMeasures(
+                        null,
                         resipe.id,
                         i
                     )
@@ -176,6 +200,7 @@ class ConvertorApiDB {
                 it.measures?.metric?.apply {
                     arrayListRecipe.add(
                         EntityRecipeMetric(
+                            null,
                             resipe.id,
                             i,
                             this.amount,
@@ -187,6 +212,7 @@ class ConvertorApiDB {
                 it.measures?.us?.apply {
                     arrayListRecipe.add(
                         EntityRecipeUs(
+                            null,
                             resipe.id,
                             i,
                             this.amount,
@@ -200,6 +226,7 @@ class ConvertorApiDB {
                     j++
                     arrayListRecipe.add(
                         EntityRecipeMeta(
+                            null,
                             resipe.id,
                             i,
                             j,
@@ -214,6 +241,7 @@ class ConvertorApiDB {
                 i++
                 arrayListRecipe.add(
                     EntityRecipeOccasions(
+                        null,
                         resipe.id,
                         i,
                         it
@@ -221,7 +249,7 @@ class ConvertorApiDB {
                 )
             }
         }
-        Log.d("RecipeActivity", "arrayListRecipe = $arrayListRecipe")
+        Log.d("RecipeActivity", "Converter and")
         return arrayListRecipe
     }
 }

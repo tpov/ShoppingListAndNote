@@ -6,27 +6,30 @@ import com.tpov.shoppinglist.ConvertorApiDB
 import com.tpov.shoppinglist.api.ApiFactory
 import com.tpov.shoppinglist.db.MainDatabase
 import com.tpov.shoppinglist.entities.*
-import com.tpov.shoppinglist.pojo.Responce
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.launch
+import okhttp3.Response
 
 @InternalCoroutinesApi
 class RecipeViewModel(database: MainDatabase) : ViewModel() {
-
     private val dao = database.getDao()
     private val apiService = ApiFactory.apiService
     private var checkDateApi = false
     private var checkNotDateApi = false
+    private lateinit var apiList: Response
+    private var network = true
+    private lateinit var liveDataDao: LiveData<List<ShopingListName>>
+    private var idListName = 0
+
+    var allItemsFromList = MutableLiveData<List<TableRecipe>>()
 
     fun loadRecipe() = viewModelScope.launch {
-        val apiList = apiService.getFullPriceList()
+        if (network) {
+            var apiList = apiService.getFullPriceList()
 
-        loadDB(apiList)
-    }
-
-    fun loadDB(apiList: Responce) {
-        ConvertorApiDB().apiToTable(apiList).forEach { item ->
-                Log.d("RecipeActivity", "loadDB.")
+            Log.d("RecipeActivity", "loadDB.")
+            ConvertorApiDB().apiToTable(apiList).forEach { item ->
+                Log.d("RecipeActivity", "Загружаем в бд.")
                 when (item) {
                     is TableRecipe -> {
                         insertTableRecipe(item)
@@ -76,9 +79,8 @@ class RecipeViewModel(database: MainDatabase) : ViewModel() {
                     is EntityRecipeLength -> {
                         insertEntityRecipeLength(item)
                     }
-
+                }
             }
-
         }
     }
 
@@ -130,10 +132,22 @@ class RecipeViewModel(database: MainDatabase) : ViewModel() {
     private fun insertTableRecipe(item: TableRecipe) = viewModelScope.launch {
         dao.insertEntityRecipeLength(item)
     }
+    fun addShopListProducts(name: String?, products: MutableMap<String, String>, date: String) = viewModelScope.launch {
+        Log.d("RecipeViewModel", "addShopListProduct.")
+        var nameShopList = ShopingListName(null, name!!, date, 0, 0, "")
+        dao.insertShopListName(nameShopList)
 
-    fun getTableRecipe(id: Int): LiveData<List<TableRecipe>> {
-        return dao.getTableRecipe(id).asLiveData()
     }
+
+    fun getShopItemRroducts(): LiveData<List<ShopingListName>> {
+        Log.d("RecipeViewModel", "getShopListProducts.")
+        return dao.getAllShopListNames().asLiveData()
+    }
+    fun insertListItem(shopListItem: ShopingListItem) = viewModelScope.launch {
+        Log.d("RecipeViewModel", "insertListItem")
+        dao.insertItem(shopListItem)
+    }
+
     fun getEntityRecipe(id: Int): LiveData<List<EntityRecipe>> {
         return dao.getEntityRecipe(id).asLiveData()
     }
@@ -180,9 +194,16 @@ class RecipeViewModel(database: MainDatabase) : ViewModel() {
         return dao.getEntityRecipeLength(id).asLiveData()
     }
 
-    fun getAllItemsFromList(date: String): LiveData<List<TableRecipe>> {
-        return dao.getAllRecipe(date).asLiveData()
+    fun getAllItemsFromList(date: String) = viewModelScope.launch {
+        Log.d("RecipeActivity", "dao.getAllRecipe(date)")
+        allItemsFromList.postValue(dao.getAllRecipe(date))
     }
+
+    fun updateTableRecipe(item: TableRecipe) = viewModelScope.launch {
+        dao.updateTableRecipe(item)
+    }
+
+
 
     class MainViewModelFactory(private val database: MainDatabase) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -193,6 +214,7 @@ class RecipeViewModel(database: MainDatabase) : ViewModel() {
             throw IllegalAccessException("Unknown ViewModelClass")
         }
     }
+
 
 
 }

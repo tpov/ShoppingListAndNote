@@ -12,4 +12,11 @@ object FragmentManager {
         transaction.commit()                                //Применяем действия над фрагментом
         currentFrag = newFrag
     }
+
+    fun setFragment2(newFrag: BaseFragment, activity: AppCompatActivity) {
+        val transaction = activity.supportFragmentManager.beginTransaction()        //Эта переменная позволяет проводить действия над фрагментами
+        transaction.replace(R.id.pliceHolger2, newFrag)      //Помещаем туда новый фрагмент
+        transaction.commit()                                //Применяем действия над фрагментом
+        currentFrag = newFrag
+    }
 }

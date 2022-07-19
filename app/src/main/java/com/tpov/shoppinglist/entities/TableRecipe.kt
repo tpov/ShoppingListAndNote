@@ -7,7 +7,7 @@ import com.tpov.shoppinglist.pojo.Us
 
 @Entity(tableName = "entity_recipe")
 data class TableRecipe(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     var id: Int?,
 
     @ColumnInfo(name = "favorite")
@@ -19,7 +19,8 @@ data class TableRecipe(
 
 @Entity(tableName = "entity_recipe_recipe")
 data class EntityRecipe(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     var id: Int?,
     var aggregateLikes: Int?,
     var cheap: Boolean?,
@@ -55,7 +56,8 @@ data class EntityRecipe(
 
 @Entity(tableName = "entity_recipe_AnalyzedInstruction")
 data class EntityRecipeAnalyzedInstruction(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     var idI: Int?,
     var id: Int,
     var name: String?,
@@ -63,7 +65,8 @@ data class EntityRecipeAnalyzedInstruction(
 
 @Entity(tableName = "entity_recipe_Step")
 data class EntityRecipeStep(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val idJ: Int?,
     val id: Int,
     val idI: Int,
@@ -73,7 +76,8 @@ data class EntityRecipeStep(
 
 @Entity(tableName = "entity_recipe_Length")
 data class EntityRecipeLength(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val idJ: Int?,
@@ -83,7 +87,8 @@ data class EntityRecipeLength(
 
 @Entity(tableName = "entity_recipe_Equipment")
 data class EntityRecipeEquipment(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val idJ: Int?,
@@ -95,7 +100,8 @@ data class EntityRecipeEquipment(
 
 @Entity(tableName = "entity_recipe_Ingredient")
 data class EntityRecipeIngredient(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val idK: Int?,
     val idI: Int?,
     val idJ: Int?,
@@ -107,7 +113,8 @@ data class EntityRecipeIngredient(
 
 @Entity(tableName = "entity_recipe_cuisines")
 data class EntityRecipeCuisines(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val cuisines: String?
@@ -115,7 +122,8 @@ data class EntityRecipeCuisines(
 
 @Entity(tableName = "entity_recipe_diets")
 data class EntityRecipeDiets(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val diets: String?
@@ -123,7 +131,8 @@ data class EntityRecipeDiets(
 
 @Entity(tableName = "entity_recipe_dishTypes")
 data class EntityRecipeDishTypes(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val dishTypes: String?
@@ -131,7 +140,8 @@ data class EntityRecipeDishTypes(
 
 @Entity(tableName = "entity_recipe_ExtendedIngredient")
 data class EntityRecipeExtendedIngredient(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val aisle: String?,
@@ -147,14 +157,16 @@ data class EntityRecipeExtendedIngredient(
 
 @Entity(tableName = "entity_recipe_Measures")
 data class EntityRecipeMeasures(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
 )
 
 @Entity(tableName = "entity_recipe_Metric")
 data class EntityRecipeMetric(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int,
     val amount: Double?,
@@ -164,7 +176,8 @@ data class EntityRecipeMetric(
 
 @Entity(tableName = "entity_recipe_Us")
 data class EntityRecipeUs(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val amount: Double?,
@@ -174,7 +187,8 @@ data class EntityRecipeUs(
 
 @Entity(tableName = "entity_recipe_meta")
 data class EntityRecipeMeta(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val idJ: Int?,
@@ -183,7 +197,8 @@ data class EntityRecipeMeta(
 
 @Entity(tableName = "entity_recipe_occasions")
 data class EntityRecipeOccasions(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    var varId: Int?,
     val id: Int?,
     val idI: Int?,
     val occasions: String?

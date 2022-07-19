@@ -8,10 +8,15 @@ import java.util.*
 object TimeManager {
 
     private const val DEF_TIME_FORMAT = "hh:mm:ss - yyyy/MM/dd"
-    fun getCurrentTime(): String{
+    fun getCurrentTime(): String {
         Log.d("NewNoteActivity", "getCurrentTime")
 
         val formatter = SimpleDateFormat("hh:mm:ss - yyyy/MM/dd", Locale.getDefault())
+        return formatter.format(Calendar.getInstance().time)
+    }
+
+    fun getCurrentDate(): String {
+        val formatter = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
         return formatter.format(Calendar.getInstance().time)
     }
 

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/recipe_color_background"
-    android:padding="16dp"
     tools:context=".RecipeActivity">
+<FrameLayout
+    android:id="@+id/pliceHolger2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,8 +35,8 @@
 
             <ImageView
                 android:id="@+id/imv_recipe"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <LinearLayout
@@ -302,7 +305,8 @@
             android:id="@+id/b_check_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/recipe_color_background"
+            android:elevation="0dp"
+            android:backgroundTint="#00769568"
             android:text="info"
             android:textColor="#0048FF" />
 
@@ -323,7 +327,7 @@
                 android:id="@+id/imb_add_favorite"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/recipe_color_background"
+                android:backgroundTint="#00769568"
                 app:srcCompat="@drawable/ic_favorite" />
 
             <Button
@@ -341,40 +345,39 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textColor="#085500" />
+
+                <TextView
+                    android:id="@+id/tv_use"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:ems="10"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
-                    android:text="text\sffdsazfaewfsafdfaewfsdfaewfsdafgreagsfdfae"
-                    android:textColor="#085500" />
-
-                <EditText
-                    android:id="@+id/tv_use"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine"
-                    android:text="text\sffdsazfaewfsafdfaewfsdfaewfsdafgreagsfdfae"
                     android:textColor="#002093" />
 
-                <EditText
-                    android:id="@+id/tv_title_info"
+                <WebView
+                    android:id="@+id/wv_title_info"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine"
-                    android:text="text\sffdsazfaewfsafdfaewfsdfaewfsdafgreagsfdfae" />
+                    android:layout_height="match_parent"
+                    android:background="#00769568"
+                    android:backgroundTint="#00769568" />
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
 
 </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

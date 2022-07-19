@@ -41,6 +41,8 @@ data class Recipe(
     val spoonacularSourceUrl: String?,
     val summary: String?,
     val sustainable: Boolean?,
+    @SerializedName( "title")
+    @Expose
     val title2: String?,
     val vegan: Boolean?,
     val vegetarian: Boolean?,

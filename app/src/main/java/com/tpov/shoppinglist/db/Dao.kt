@@ -1,9 +1,7 @@
 package com.tpov.shoppinglist.db
 
-import androidx.room.Insert
+import androidx.room.*
 import androidx.room.Dao
-import androidx.room.Query
-import androidx.room.Update
 import com.tpov.shoppinglist.entities.*
 import kotlinx.coroutines.flow.Flow
 
@@ -12,7 +10,7 @@ interface Dao {
     @Insert
     suspend fun insertNode(note: NoteItem)
     @Insert
-    suspend fun insertShopListName(name: ShopingListName)
+    suspend fun insertShopListName(note: ShopingListName)
     @Insert
     suspend fun insertItem(note: ShopingListItem)
     @Insert
@@ -20,37 +18,37 @@ interface Dao {
     @Insert
     suspend fun insertCrimeNewQuiz(name: CrimeNewQuiz)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTableRecipe(item: EntityRecipeCuisines)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeStep(item: EntityRecipeUs)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeAnalyzedInstruction(item: EntityRecipeOccasions)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeEquipment(item: EntityRecipeDiets)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipe(item: EntityRecipeMeasures)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeIngredient(item: EntityRecipeMetric)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeCuisines(item: EntityRecipeLength)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeDiets(item: EntityRecipeMeta)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeExtendedIngredient(item: EntityRecipeIngredient)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeMeta(item: EntityRecipeExtendedIngredient)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeDishTypes(item: EntityRecipeDishTypes)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeOccasions(item: EntityRecipeEquipment)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeMeasures(item: EntityRecipeStep)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeMetric(item: EntityRecipeAnalyzedInstruction)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeUs(item: EntityRecipe)
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertEntityRecipeLength(item: TableRecipe)
 
 
@@ -66,9 +64,9 @@ interface Dao {
     suspend fun getAllIdQuestion() : List<CrimeNewQuiz>
 
     @Query("SELECT * FROM entity_recipe WHERE date LIKE :date")
-    fun getAllRecipe(date: String): Flow<List<TableRecipe>>
+    suspend fun getAllRecipe(date: String): List<TableRecipe>
     @Query("SELECT * FROM entity_recipe WHERE id LIKE :id")
-    fun getTableRecipe(id: Int): Flow<List<TableRecipe>>
+    suspend fun getTableRecipe(id: Int): List<TableRecipe>
     @Query("SELECT * FROM entity_recipe_recipe WHERE id LIKE :id")
     fun getEntityRecipe(id: Int): Flow<List<EntityRecipe>>
     @Query("SELECT * FROM entity_recipe_AnalyzedInstruction WHERE id LIKE :id ")
@@ -118,6 +116,8 @@ interface Dao {
     suspend fun updateShopListItem(note: ShopingListItem)
     @Update
     suspend fun updateLibraryItem(note: LibraryItem)
+    @Update
+    suspend fun updateTableRecipe(item: TableRecipe)
 
 
 }

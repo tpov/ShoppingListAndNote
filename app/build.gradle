@@ -56,6 +56,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.google.android.gms:play-services-ads:20.6.0'
     implementation 'com.android.billingclient:billing:4.1.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     annotationProcessor 'android.arch.lifecycle:compiler:1.1.1'
     kapt 'android.arch.lifecycle:compiler:1.1.1'
