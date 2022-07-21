@@ -116,8 +116,7 @@ interface Dao {
     suspend fun updateShopListItem(note: ShopingListItem)
     @Update
     suspend fun updateLibraryItem(note: LibraryItem)
+
     @Update
     suspend fun updateTableRecipe(item: TableRecipe)
-
-
 }

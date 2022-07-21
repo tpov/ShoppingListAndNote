@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/picker_cyan">
+        android:background="#3D815A">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcViewNote"
@@ -22,7 +22,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="4dp"
-            android:background="@color/cardview_dark_background"
+            android:background="#3D815A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -9,9 +9,9 @@
         android:id="@+id/CardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#353535"
-        android:backgroundTint="#434343"
-        app:cardCornerRadius="20dip"
+        android:background="#606060"
+        android:backgroundTint="#656565"
+        app:cardCornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/edit_list_item_dialog_etName"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
             <LinearLayout
@@ -62,6 +63,7 @@
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
                     android:text="@string/et_item_info"
+                    android:textColor="#FFFFFF"
                     android:textColorHint="#508E6A"
                     android:textSize="14sp" />
 

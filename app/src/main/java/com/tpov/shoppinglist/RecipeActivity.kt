@@ -27,7 +27,7 @@ import kotlinx.coroutines.*
 import java.lang.System.load
 import kotlin.concurrent.thread
 
-/**
+/** LiveData
  *                                              wait children
  *  +-----+ start  +--------+ complete   +-------------+  finish  +-----------+
  *  | New | -----> | Active | ---------> | Completing  | -------> | Completed |
@@ -119,10 +119,11 @@ class RecipeActivity : AppCompatActivity() {
                         Log.d("RecipeViewModel", "insert ShopItemList")
                         viewModel.insertListItem(ShopingListItem(null, itItem.value, "", false, item.id!!, 0, ""))
                     }
-
+                    Toast.makeText(this, "${R.string.add_recipe_item}", Toast.LENGTH_LONG).show()
                 }
 
             }
+
         })
         viewModel.addShopListProducts(valNameRecipe, products, systemDate)
         binding.bAddProduct.isClickable = false
@@ -146,7 +147,7 @@ class RecipeActivity : AppCompatActivity() {
                 }
 
                 checkLoadApi = if (!foundRecipe && !checkLoadApi) {
-                    viewModel.getAllItemsFromList("")
+                   viewModel.getAllItemsFromList("")
                     foundRecipe = false
                     true
                 } else {
@@ -219,12 +220,7 @@ class RecipeActivity : AppCompatActivity() {
                     loadCheckTVandImB(imvCheck2, tvCheck2, item.vegan.toString(), "vegan")
                     loadCheckTVandImB(imvCheck3, tvCheck3, item.glutenFree.toString(), "glutenFree")
                     loadCheckTVandImB(imvCheck4, tvCheck4, item.dairyFree.toString(), "dairyFree")
-                    loadCheckTVandImB(
-                        imvCheck5,
-                        tvCheck5,
-                        item.veryHealthy.toString(),
-                        "veryHealthy"
-                    )
+                    loadCheckTVandImB(imvCheck5, tvCheck5, item.veryHealthy.toString(),"veryHealthy")
                     loadCheckTVandImB(imvCheck6, tvCheck6, item.cheap.toString(), "cheap")
                     loadCheckTVandImB(
                         imvCheck7,
@@ -254,13 +250,11 @@ class RecipeActivity : AppCompatActivity() {
                             .load(imageURL)
                             .error(R.drawable.ic_remove)
                             .into(binding.imvRecipe)
+                        progressBar(false)
                     }
                 }
-
-
             }
-            a1 = false
-            progressBar(false)
+
         })
         var q = 0
         viewModel.getEntityRecipeStep(id).observe(this@RecipeActivity, {
@@ -279,7 +273,6 @@ class RecipeActivity : AppCompatActivity() {
                     tvUse.append("${item.localizedName}, ")
                 }
             }
-            a2 = false
         })
         var e = 0
         viewModel.getEntityRecipeIngredient(id).observe(this@RecipeActivity, {
@@ -323,14 +316,13 @@ class RecipeActivity : AppCompatActivity() {
                 if (a3) {
                     u++
                     Log.d("getEntityRecipe", "getEntityRecipeExtendedIngredient: $u, $item")
-                    //products[item.nameClean.toString()] = item.
+                    //products[item.nameClean.toString()] = item
                     var oneMapProduct = mapProduct[u]
                     mapProduct[u] = "${item.nameClean}${oneMapProduct}"
                     showProduct()
 
                 }
             }
-            a3 = false
         })
          var z = 0
         viewModel.getEntityRecipeMeta(id).observe(this@RecipeActivity, {
@@ -370,7 +362,6 @@ class RecipeActivity : AppCompatActivity() {
                     showProduct()
                 }
             }
-            a4 = false
         })
          var s = 0
         viewModel.getEntityRecipeUs(id).observe(this@RecipeActivity, {
@@ -407,20 +398,29 @@ class RecipeActivity : AppCompatActivity() {
         text: String
     ) {
         Log.d("RecipeActivity", "loadCheckTVandImB: $check, $text")
-        if (check == "true") {
+        if (check == "false") {
+
+            imvCheck.visibility = View.GONE
+            tvCheck.visibility = View.GONE
+
+        } else {
+
             imvCheck.visibility = View.VISIBLE
             tvCheck.visibility = View.VISIBLE
             tvCheck.text = text
-        } else {
-            imvCheck.visibility = View.GONE
-            tvCheck.visibility = View.GONE
         }
     }
 
     private fun progressBar(b: Boolean) {
         Log.d("RecipeActivity", "Progress bar: $b")
         if (b) binding.progressBar.visibility = View.VISIBLE
-        else binding.progressBar.visibility = View.GONE
+        else {
+            binding.progressBar.visibility = View.GONE
+            a1 = true
+                a2 = true
+                a3 = true
+                a4 = true
+        }
     }
 
     private fun startFragment() {

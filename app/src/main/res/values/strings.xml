@@ -62,4 +62,5 @@
     <string name="recipe_tv_check">"sustainablemk"</string>
     <string name="recipe_add_product">Добавить продукты</string>
     <string name="error_load_api_recipe">Не удалось подключиться к сети. Возможно проблема с сервером.</string>
+    <string name="add_recipe_item">Товары добавлены в список покупок</string>
 </resources>

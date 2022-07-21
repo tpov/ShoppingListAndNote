@@ -18,18 +18,16 @@
 
     <item
         android:id="@+id/shop_list_menu_new_item"
-        android:title="@string/shop_list_menu_new_item"
         android:icon="@drawable/ic_add"
-        app:actionLayout="@layout/edit_action_layout"
-        app:showAsAction="always|collapseActionView"
         android:orderInCategory="1"
-        />
+        android:title="@string/shop_list_menu_new_item"
+        app:actionLayout="@layout/edit_action_layout"
+        app:showAsAction="ifRoom|withText" />
 
     <item
         android:id="@+id/shop_list_menu_save_item"
-        android:title="@string/shop_list_menu_save_item"
         android:icon="@drawable/id_save2"
-        app:showAsAction="always"
         android:orderInCategory="2"
-        />
+        android:title="@string/shop_list_menu_save_item"
+        app:showAsAction="ifRoom|withText" />
 </menu>

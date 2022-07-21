@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/cardview_dark_background"
-    android:backgroundTint="@color/cardview_dark_background">
+    android:background="#3D815A"
+    android:backgroundTint="#3D815A">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="80dp"
-        android:background="@color/cardview_dark_background"
-        android:backgroundTint="@color/cardview_dark_background"
+        android:background="#3D815A"
+        android:backgroundTint="#3D815A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

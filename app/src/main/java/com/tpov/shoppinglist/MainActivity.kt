@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
     private var iAd: InterstitialAd? = null
     private var currentShowAd = 0
     private lateinit var pref: SharedPreferences
-
+    private var i = 10
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

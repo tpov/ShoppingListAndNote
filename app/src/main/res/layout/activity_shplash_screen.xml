@@ -4,18 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".ShplashScreen">
 
     <TextView
-        android:id="@+id/tv_hw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HelloWorld"
-
-        android:orientation="horizontal"
-        android:textSize="30sp"
+        android:id="@+id/tvT"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="T"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvP"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:gravity="center_horizontal"
+        android:text="P"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvO"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:gravity="center_horizontal"
+        android:text="O"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvV"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:gravity="center_horizontal"
+        android:text="V"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
