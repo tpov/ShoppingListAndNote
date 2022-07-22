@@ -11,7 +11,9 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.tpov.shoppinglist.databinding.ActivityShopListBinding
 import com.tpov.shoppinglist.db.MainViewModel
 import com.tpov.shoppinglist.db.ShopListItemAdapter
@@ -91,13 +93,38 @@ class ShopListActivity : AppCompatActivity(), ShopListItemAdapter.Listener {
         adapter = ShopListItemAdapter(this@ShopListActivity)
         activityShopListRcView.layoutManager = LinearLayoutManager(this@ShopListActivity)
         activityShopListRcView.adapter = adapter
+
+
+        swipeListItemAdapter()
+    }
+
+    private fun ActivityShopListBinding.swipeListItemAdapter() {
+        val callback = object : ItemTouchHelper.SimpleCallback(
+            0,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val item = adapter!!.currentList[viewHolder.adapterPosition]
+                mainViewModel.deleteShopList(item.id!!)
+            }
+        }
+        val itemTouchHelper = ItemTouchHelper(callback)
+        itemTouchHelper.attachToRecyclerView(activityShopListRcView)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         addNewShopItem(edItem?.text.toString())
         when(item.itemId) {
             R.id.shop_list_menu_delete_list -> {
-                mainViewModel.deleteShopListItem(shopListName?.id!!)
+                mainViewModel.deleteShopList(shopListName?.id!!)
                 finish()
             }
             R.id.shop_list_menu_clear_list -> {

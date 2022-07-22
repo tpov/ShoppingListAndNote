@@ -22,7 +22,7 @@ class ShplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_shplash_screen)
         binding = ActivityShplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        visibleTPOV(false)
+        visibleTPOV(true)
     }
 
     private fun visibleTPOV(visible: Boolean) = with(binding) {
@@ -47,14 +47,13 @@ class ShplashScreen : AppCompatActivity() {
     }
 
     private fun createAnimation() = with(binding) {
-        visibleTPOV(true)
 
         tvT.startAnimation(AnimationUtils.loadAnimation(this@ShplashScreen, R.anim.anim_splash_t))
         tvP.startAnimation(AnimationUtils.loadAnimation(this@ShplashScreen, R.anim.anim_splash_p))
         tvO.startAnimation(AnimationUtils.loadAnimation(this@ShplashScreen, R.anim.anim_splash_o))
-
         var anim3 = AnimationUtils.loadAnimation(this@ShplashScreen, R.anim.anim_splash_v)
         animationListener(anim3, 3)
+
         tvV.startAnimation(anim3)
     }
 
@@ -66,8 +65,9 @@ class ShplashScreen : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(p0: Animation?) {
-                visibleTPOV(false)
                 startActivity()
+
+
             }
 
             override fun onAnimationRepeat(p0: Animation?) {
@@ -78,6 +78,7 @@ class ShplashScreen : AppCompatActivity() {
     private fun startActivity() {
         var intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        visibleTPOV(false)
         finish()
     }
 }

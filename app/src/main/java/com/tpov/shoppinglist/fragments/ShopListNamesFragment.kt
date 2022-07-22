@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.tpov.shoppinglist.MainApp
 import com.tpov.shoppinglist.ShopListActivity
 import com.tpov.shoppinglist.databinding.FragmentShopListNamesBinding
@@ -71,6 +73,31 @@ class ShopListNamesFragment : BaseFragment(), ShopingListAdapter.Listener {
         rcView.layoutManager = LinearLayoutManager(activity)
         adapter = ShopingListAdapter(this@ShopListNamesFragment)
         rcView.adapter = adapter
+
+
+        swipe()
+    }
+
+    private fun FragmentShopListNamesBinding.swipe() {
+        val callback = object : ItemTouchHelper.SimpleCallback(
+            0,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val item = adapter.currentList[viewHolder.adapterPosition]
+                mainViewModel.deleteShopItem(item.id!!)
+            }
+        }
+        val itemTouchHelper = ItemTouchHelper(callback)
+        itemTouchHelper.attachToRecyclerView(rcView)
     }
 
     @kotlinx.coroutines.InternalCoroutinesApi
@@ -84,7 +111,7 @@ class ShopListNamesFragment : BaseFragment(), ShopingListAdapter.Listener {
     override fun deleteItem(id: Int) {
         DeleteDialog.showDialog(context as AppCompatActivity, object : DeleteDialog.Listener {
             override fun onClick() {
-                mainViewModel.deleteShopListItem(id)
+                mainViewModel.deleteShopItem(id)
             }
         })
     }
