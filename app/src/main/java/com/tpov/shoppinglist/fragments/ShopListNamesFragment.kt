@@ -75,7 +75,7 @@ class ShopListNamesFragment : BaseFragment(), ShopingListAdapter.Listener {
         rcView.adapter = adapter
 
 
-        swipe()
+        //swipe()
     }
 
     private fun FragmentShopListNamesBinding.swipe() {

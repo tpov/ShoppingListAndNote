@@ -113,7 +113,7 @@ class ShopListActivity : AppCompatActivity(), ShopListItemAdapter.Listener {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val item = adapter!!.currentList[viewHolder.adapterPosition]
-                mainViewModel.deleteShopList(item.id!!)
+                mainViewModel.deleteShopItem(item.id!!)
             }
         }
         val itemTouchHelper = ItemTouchHelper(callback)
